@@ -1,0 +1,437 @@
+﻿State,CongressionalDistrict,PVI,TotalVote
+Alabama,Alabama 1st,0.2274,0.002145529
+Alabama,Alabama 2nd,0.5468,0.001910405
+Alabama,Alabama 3rd,0.2717,0.002053993
+Alabama,Alabama 4th,0.1675,0.002037363
+Alabama,Alabama 5th,0.3516,0.002306126
+Alabama,Alabama 6th,0.3036,0.00225881
+Alabama,Alabama 7th,0.6271,0.001977513
+Alaska,Alaska At-Large,0.4354,0.002150879
+Arizona,Arizona 1st,0.4901,0.002933267
+Arizona,Arizona 2nd,0.4332,0.002671324
+Arizona,Arizona 3rd,0.7154,0.001398523
+Arizona,Arizona 4th,0.5384,0.002273153
+Arizona,Arizona 5th,0.4034,0.002827694
+Arizona,Arizona 6th,0.4972,0.002833997
+Arizona,Arizona 7th,0.6255,0.001841273
+Arizona,Arizona 8th,0.421,0.002550878
+Arizona,Arizona 9th,0.3497,0.002540107
+Arkansas,Arkansas 1st,0.2741,0.001768483
+Arkansas,Arkansas 2nd,0.4234,0.002056874
+Arkansas,Arkansas 3rd,0.3738,0.001951327
+Arkansas,Arkansas 4th,0.3022,0.001821423
+California,California 1st,0.3792,0.002111139
+California,California 2nd,0.7386,0.002521544
+California,California 3rd,0.4828,0.002764258
+California,California 4th,0.6677,0.002263245
+California,California 5th,0.416,0.002456807
+California,California 6th,0.5774,0.001955821
+California,California 7th,0.6632,0.002002477
+California,California 8th,0.7378,0.001864787
+California,California 9th,0.5092,0.001682695
+California,California 10th,0.6813,0.002449975
+California,California 11th,0.8599,0.002326949
+California,California 12th,0.8941,0.002073209
+California,California 13th,0.4929,0.001411613
+California,California 14th,0.6962,0.001903684
+California,California 15th,0.7591,0.002006873
+California,California 16th,0.7564,0.002235517
+California,California 17th,0.7091,0.001721095
+California,California 18th,0.6705,0.00154912
+California,California 19th,0.6842,0.002438107
+California,California 20th,0.3517,0.002130421
+California,California 21st,0.5404,0.001316602
+California,California 22nd,0.494,0.001126939
+California,California 23rd,0.4224,0.001784107
+California,California 24th,0.6341,0.00227638
+California,California 25th,0.5289,0.001624196
+California,California 26th,0.5762,0.002251684
+California,California 27th,0.5308,0.002025978
+California,California 28th,0.648,0.002152479
+California,California 29th,0.7003,0.001550838
+California,California 30th,0.7182,0.002210991
+California,California 31st,0.6049,0.001755766
+California,California 32nd,0.6729,0.002287053
+California,California 33rd,0.5661,0.001596547
+California,California 34th,0.7811,0.001407348
+California,California 35th,0.5749,0.001602844
+California,California 36th,0.7078,0.002500727
+California,California 37th,0.8269,0.001564803
+California,California 38th,0.6007,0.001941673
+California,California 39th,0.5708,0.001547716
+California,California 40th,0.4933,0.002533555
+California,California 41st,0.4757,0.002322083
+California,California 42nd,0.6846,0.001634647
+California,California 43rd,0.7712,0.001491934
+California,California 44th,0.6926,0.001658233
+California,California 45th,0.5138,0.002114079
+California,California 46th,0.6074,0.001441836
+California,California 47th,0.5303,0.002338125
+California,California 48th,0.4253,0.002401855
+California,California 49th,0.5445,0.002482314
+California,California 50th,0.657,0.00240307
+California,California 51st,0.6258,0.002199233
+California,California 52nd,0.6286,0.001771011
+Colorado,Colorado 1st,0.7944,0.002378713
+Colorado,Colorado 2nd,0.7045,0.002766015
+Colorado,Colorado 3rd,0.452,0.002599755
+Colorado,Colorado 4th,0.406,0.00290857
+Colorado,Colorado 5th,0.4518,0.002375774
+Colorado,Colorado 6th,0.6068,0.002324049
+Colorado,Colorado 7th,0.576,0.002851796
+Colorado,Colorado 8th,0.4988,0.002183858
+Connecticut,Connecticut 1st,0.6228,0.002235472
+Connecticut,Connecticut 2nd,0.544,0.002497513
+Connecticut,Connecticut 3rd,0.5786,0.002224067
+Connecticut,Connecticut 4th,0.6282,0.002204446
+Connecticut,Connecticut 5th,0.5349,0.002241148
+Delaware,Delaware At-Large,0.5801,0.003280907
+Distirct of Coulmbia,District of Columbia At-Large,0.936,0.002092929
+Florida,Florida 1st,0.3181,0.002716935
+Florida,Florida 2nd,0.4172,0.002658214
+Florida,Florida 3rd,0.4024,0.002572093
+Florida,Florida 4th,0.4466,0.002571224
+Florida,Florida 5th,0.3986,0.002803546
+Florida,Florida 6th,0.3564,0.002836649
+Florida,Florida 7th,0.4456,0.002766491
+Florida,Florida 8th,0.3931,0.002984143
+Florida,Florida 9th,0.5353,0.002156339
+Florida,Florida 10th,0.6264,0.001998114
+Florida,Florida 11th,0.4248,0.002906062
+Florida,Florida 12th,0.333,0.002846212
+Florida,Florida 13th,0.4465,0.002758594
+Florida,Florida 14th,0.5533,0.002365023
+Florida,Florida 15th,0.4534,0.002314362
+Florida,Florida 16th,0.4302,0.002723284
+Florida,Florida 17th,0.3895,0.003000224
+Florida,Florida 18th,0.36,0.002296629
+Florida,Florida 19th,0.3633,0.002785995
+Florida,Florida 20th,0.7156,0.001995109
+Florida,Florida 21st,0.4255,0.002934991
+Florida,Florida 22nd,0.5431,0.00246541
+Florida,Florida 23rd,0.5238,0.002551119
+Florida,Florida 24th,0.675,0.001969701
+Florida,Florida 25th,0.5452,0.002334846
+Florida,Florida 26th,0.3434,0.002035684
+Florida,Florida 27th,0.4431,0.002221134
+Florida,Florida 28th,0.3958,0.002184831
+Georgia,Georgia 1st,0.4233,0.002318654
+Georgia,Georgia 2nd,0.5418,0.002058676
+Georgia,Georgia 3rd,0.3501,0.002660579
+Georgia,Georgia 4th,0.7716,0.002014045
+Georgia,Georgia 5th,0.8635,0.00226478
+Georgia,Georgia 6th,0.7512,0.002418877
+Georgia,Georgia 7th,0.3918,0.002748242
+Georgia,Georgia 8th,0.3496,0.002220142
+Georgia,Georgia 9th,0.3303,0.00254174
+Georgia,Georgia 10th,0.3949,0.002622988
+Georgia,Georgia 11th,0.384,0.002669762
+Georgia,Georgia 12th,0.4337,0.00225041
+Georgia,Georgia 13th,0.7106,0.002346283
+Georgia,Georgia 14th,0.3133,0.002451249
+Hawaii,Hawaii 1st,0.6317,0.001647018
+Hawaii,Hawaii 2nd,0.6204,0.001754577
+Idaho,Idaho 1st,0.2776,0.003014901
+Idaho,Idaho 2nd,0.3669,0.002670664
+Illinois,Illinois 1st,0.6752,0.002179259
+Illinois,Illinois 2nd,0.6767,0.001977735
+Illinois,Illinois 3rd,0.6718,0.001756902
+Illinois,Illinois 4th,0.667,0.001407675
+Illinois,Illinois 5th,0.6916,0.002454828
+Illinois,Illinois 6th,0.5348,0.002404546
+Illinois,Illinois 7th,0.8408,0.001852429
+Illinois,Illinois 8th,0.546,0.002023757
+Illinois,Illinois 9th,0.6913,0.002293324
+Illinois,Illinois 10th,0.6166,0.002160578
+Illinois,Illinois 11th,0.5629,0.002358354
+Illinois,Illinois 12th,0.28,0.002413064
+Illinois,Illinois 13th,0.5549,0.002170454
+Illinois,Illinois 14th,0.5344,0.002173302
+Illinois,Illinois 15th,0.2985,0.00246944
+Illinois,Illinois 16th,0.3857,0.002520459
+Illinois,Illinois 17th,0.5283,0.002051015
+Indiana,Indiana 1st,0.5119,0.002125849
+Indiana,Indiana 2nd,0.3702,0.00194407
+Indiana,Indiana 3rd,0.3431,0.002076671
+Indiana,Indiana 4th,0.3511,0.002157306
+Indiana,Indiana 5th,0.4154,0.002365114
+Indiana,Indiana 6th,0.335,0.002097423
+Indiana,Indiana 7th,0.712,0.001793741
+Indiana,Indiana 8th,0.3213,0.002152427
+Indiana,Indiana 9th,0.3512,0.002274434
+Iowa,Iowa 1st,0.464,0.002726321
+Iowa,Iowa 2nd,0.4564,0.00272282
+Iowa,Iowa 3rd,0.4828,0.002715093
+Iowa,Iowa 4th,0.3472,0.002547259
+Kansas,Kansas 1st,0.3427,0.002010831
+Kansas,Kansas 2nd,0.4039,0.001992947
+Kansas,Kansas 3rd,0.5213,0.002555365
+Kansas,Kansas 4th,0.3832,0.002018199
+Kentucky,Kentucky 1st,0.266,0.002223466
+Kentucky,Kentucky 2nd,0.296,0.002262134
+Kentucky,Kentucky 3rd,0.6007,0.002185863
+Kentucky,Kentucky 4th,0.3229,0.002406036
+Kentucky,Kentucky 5th,0.1823,0.002060721
+Kentucky,Kentucky 6th,0.4285,0.002290659
+Louisiana,Louisiana 1st,0.3055,0.00243535
+Louisiana,Louisiana 2nd,0.6664,0.002097508
+Louisiana,Louisiana 3rd,0.275,0.002192591
+Louisiana,Louisiana 4th,0.2387,0.002200357
+Louisiana,Louisiana 5th,0.3185,0.002133805
+Louisiana,Louisiana 6th,0.5818,0.002065672
+Maine,Maine 1st,0.6121,0.00275994
+Maine,Maine 2nd,0.4575,0.002525391
+Maryland,Maryland 1st,0.4165,0.002689345
+Maryland,Maryland 2nd,0.5975,0.002497454
+Maryland,Maryland 3rd,0.6243,0.002625281
+Maryland,Maryland 4th,0.8867,0.001829849
+Maryland,Maryland 5th,0.674,0.002722467
+Maryland,Maryland 6th,0.5347,0.00244503
+Maryland,Maryland 7th,0.8074,0.001941529
+Maryland,Maryland 8th,0.7971,0.002478277
+Massachusetts,Massachusetts 1st,0.5798,0.002450582
+Massachusetts,Massachusetts 2nd,0.6304,0.002460674
+Massachusetts,Massachusetts 3rd,0.6077,0.002307922
+Massachusetts,Massachusetts 4th,0.6117,0.002606411
+Massachusetts,Massachusetts 5th,0.7387,0.002420236
+Massachusetts,Massachusetts 6th,0.6142,0.002791253
+Massachusetts,Massachusetts 7th,0.836,0.001828458
+Massachusetts,Massachusetts 8th,0.6462,0.002538108
+Massachusetts,Massachusetts 9th,0.5641,0.002939694
+Michigan,Michigan 1st,0.3947,0.003080362
+Michigan,Michigan 2nd,0.3495,0.002796309
+Michigan,Michigan 3rd,0.541,0.002720821
+Michigan,Michigan 4th,0.4739,0.002762357
+Michigan,Michigan 5th,0.3664,0.002690651
+Michigan,Michigan 6th,0.6234,0.002950191
+Michigan,Michigan 7th,0.4956,0.002945253
+Michigan,Michigan 8th,0.495,0.002784545
+Michigan,Michigan 9th,0.3397,0.00310114
+Michigan,Michigan 10th,0.4736,0.002785414
+Michigan,Michigan 11th,0.5867,0.002952947
+Michigan,Michigan 12th,0.7099,0.00236143
+Michigan,Michigan 13th,0.7212,0.002153674
+Minnesota,Minnesota 1st,0.4423,0.002487435
+Minnesota,Minnesota 2nd,0.5314,0.002712036
+Minnesota,Minnesota 3rd,0.6081,0.002722226
+Minnesota,Minnesota 4th,0.6847,0.002440314
+Minnesota,Minnesota 5th,0.8187,0.002388596
+Minnesota,Minnesota 6th,0.4021,0.00272751
+Minnesota,Minnesota 7th,0.3185,0.002560492
+Minnesota,Minnesota 8th,0.431,0.002747399
+Mississippi,Mississippi 1st,0.319,0.00210336
+Mississippi,Mississippi 2nd,0.6102,0.001927642
+Mississippi,Mississippi 3rd,0.3585,0.002125281
+Mississippi,Mississippi 4th,0.2905,0.001909465
+Missouri,Missouri 1st,0.7923,0.00208336
+Missouri,Missouri 2nd,0.4599,0.002795786
+Missouri,Missouri 3rd,0.3645,0.002600003
+Missouri,Missouri 4th,0.2891,0.002418022
+Missouri,Missouri 5th,0.6219,0.00218711
+Missouri,Missouri 6th,0.3052,0.002460151
+Missouri,Missouri 7th,0.2855,0.002401418
+Missouri,Missouri 8th,0.2304,0.002371052
+Montana,Montana 1st,0.4464,0.002032419
+Montana,Montana 2nd,0.3511,0.001789228
+Nebraska,Nebraska 1st,0.4362,0.002041785
+Nebraska,Nebraska 2nd,0.5256,0.002031393
+Nebraska,Nebraska 3rd,0.2297,0.002027272
+Nevada,Nevada 1st,0.5194,0.002131937
+Nevada,Nevada 2nd,0.4322,0.002652525
+Nevada,Nevada 3rd,0.5056,0.002437552
+Nevada,Nevada 4th,0.5194,0.002155294
+New Hampshire,New Hampshire 1st,0.515,0.002647169
+New Hampshire,New Hampshire 2nd,0.5248,0.002631532
+New Jersey,New Jersey 1st,0.6022,0.002464377
+New Jersey,New Jersey 2nd,0.446,0.002529388
+New Jersey,New Jersey 3rd,0.5495,0.002631036
+New Jersey,New Jersey 4th,0.357,0.002701428
+New Jersey,New Jersey 5th,0.5214,0.00263276
+New Jersey,New Jersey 6th,0.549,0.002077102
+New Jersey,New Jersey 7th,0.5004,0.002886911
+New Jersey,New Jersey 8th,0.6502,0.00145181
+New Jersey,New Jersey 9th,0.5194,0.001873017
+New Jersey,New Jersey 10th,0.7719,0.001738515
+New Jersey,New Jersey 11th,0.5548,0.002680448
+New Jersey,New Jersey 12th,0.6356,0.00218858
+New Mexico,New Mexico 1st,0.5674,0.002254962
+New Mexico,New Mexico 2nd,0.5001,0.00172184
+New Mexico,New Mexico 3rd,0.5321,0.001898935
+New York,New York 1st,0.4595,0.002764649
+New York,New York 2nd,0.4441,0.002345565
+New York,New York 3rd,0.4979,0.002460086
+New York,New York 4th,0.5232,0.002518206
+New York,New York 5th,0.7388,0.001602419
+New York,New York 6th,0.5614,0.001384206
+New York,New York 7th,0.7533,0.001523189
+New York,New York 8th,0.7374,0.001578101
+New York,New York 9th,0.721,0.001640885
+New York,New York 10th,0.8214,0.001787157
+New York,New York 11th,0.3972,0.001788183
+New York,New York 12th,0.8334,0.002180206
+New York,New York 13th,0.823,0.001599617
+New York,New York 14th,0.6908,0.001349849
+New York,New York 15th,0.7717,0.001257992
+New York,New York 16th,0.6811,0.002129598
+New York,New York 17th,0.5148,0.002516821
+New York,New York 18th,0.5241,0.002393991
+New York,New York 19th,0.5124,0.002481197
+New York,New York 20th,0.5781,0.002423038
+New York,New York 21st,0.4021,0.002309895
+New York,New York 22nd,0.5433,0.00235934
+New York,New York 23rd,0.3973,0.002561374
+New York,New York 24th,0.3868,0.002428923
+New York,New York 25th,0.5963,0.002444861
+New York,New York 26th,0.6053,0.002207979
+North Carolina,North Carolina 1st,0.4904,0.002477937
+North Carolina,North Carolina 2nd,0.674,0.002637208
+North Carolina,North Carolina 3rd,0.3953,0.002442058
+North Carolina,North Carolina 4th,0.7312,0.002772135
+North Carolina,North Carolina 5th,0.4132,0.002621689
+North Carolina,North Carolina 6th,0.4142,0.002502236
+North Carolina,North Carolina 7th,0.4337,0.002821051
+North Carolina,North Carolina 8th,0.4041,0.002622616
+North Carolina,North Carolina 9th,0.4223,0.002449851
+North Carolina,North Carolina 10th,0.4125,0.002653747
+North Carolina,North Carolina 11th,0.45,0.002825251
+North Carolina,North Carolina 12th,0.7401,0.002265955
+North Carolina,North Carolina 13th,0.4156,0.002684211
+North Carolina,North Carolina 14th,0.4224,0.002613112
+North Dakota,North Dakota At-Large,0.3167,0.002330195
+Ohio,Ohio 1st,0.5347,0.002605438
+Ohio,Ohio 2nd,0.2627,0.002450831
+Ohio,Ohio 3rd,0.7079,0.002351084
+Ohio,Ohio 4th,0.3156,0.002620395
+Ohio,Ohio 5th,0.3552,0.002560081
+Ohio,Ohio 6th,0.3363,0.00249831
+Ohio,Ohio 7th,0.448,0.0027254
+Ohio,Ohio 8th,0.3824,0.002542922
+Ohio,Ohio 9th,0.4708,0.002461752
+Ohio,Ohio 10th,0.4737,0.002463058
+Ohio,Ohio 11th,0.7807,0.002138272
+Ohio,Ohio 12th,0.337,0.002524666
+Ohio,Ohio 13th,0.5037,0.002573092
+Ohio,Ohio 14th,0.4132,0.002631454
+Ohio,Ohio 15th,0.4565,0.002370823
+Oklahoma,Oklahoma 1st,0.3901,0.002020211
+Oklahoma,Oklahoma 2nd,0.2201,0.002085411
+Oklahoma,Oklahoma 3rd,0.2715,0.001757895
+Oklahoma,Oklahoma 4th,0.3335,0.001987506
+Oklahoma,Oklahoma 5th,0.4084,0.002161539
+Oregon,Oregon 1st,0.6974,0.002353305
+Oregon,Oregon 2nd,0.3639,0.002348994
+Oregon,Oregon 3rd,0.7389,0.002266589
+Oregon,Oregon 4th,0.563,0.002494058
+Oregon,Oregon 5th,0.5449,0.002639377
+Oregon,Oregon 6th,0.5609,0.002237771
+Pennsylvania,Pennsylvania 1st,0.507,0.003049402
+Pennsylvania,Pennsylvania 2nd,0.6894,0.001935441
+Pennsylvania,Pennsylvania 3rd,0.8951,0.002550806
+Pennsylvania,Pennsylvania 4th,0.5837,0.003005463
+Pennsylvania,Pennsylvania 5th,0.6492,0.002710292
+Pennsylvania,Pennsylvania 6th,0.5618,0.002729711
+Pennsylvania,Pennsylvania 7th,0.4886,0.002631578
+Pennsylvania,Pennsylvania 8th,0.4642,0.002513732
+Pennsylvania,Pennsylvania 9th,0.3101,0.002556436
+Pennsylvania,Pennsylvaina 10th,0.4749,0.002637156
+Pennsylvania,Pennsylvania 11th,0.392,0.002639827
+Pennsylvania,Pennsylvania 12th,0.5977,0.002776289
+Pennsylvania,Pennsylvania 13th,0.2706,0.002652525
+Pennsylvania,Pennsylvania 14th,0.3342,0.002713695
+Pennsylvania,Pennsylvania 15th,0.3093,0.002556717
+Pennsylvania,Pennsylvania 16th,0.3877,0.002684296
+Pennsylvania,Pennsylvania 17th,0.5282,0.002951007
+Rhode Island,Rhode Island 1st,0.6218,0.001510556
+Rhode Island,Rhode Island 2nd,0.5434,0.001765282
+South Carolina,South Carolina 1st,0.4396,0.002543582
+South Carolina,South Carolina 2nd,0.4335,0.002354108
+South Carolina,South Carolina 3rd,0.2889,0.002284414
+South Carolina,South Carolina 4th,0.3865,0.002264205
+South Carolina,South Carolina 5th,0.3903,0.002391431
+South Carolina,South Carolina 6th,0.6266,0.002055456
+South Carolina,South Carolina 7th,0.3765,0.002457846
+South Dakota,South Dakota At-Large,0.3543,0.002724296
+Tennessee,Tennessee 1st,0.2118,0.002228894
+Tennessee,Tennessee 2nd,0.334,0.002342945
+Tennessee,Tennessee 3rd,0.323,0.002305146
+Tennessee,Tennessee 4th,0.2865,0.002150774
+Tennessee,Tennessee 5th,0.4169,0.002367838
+Tennessee,Tennessee 6th,0.3304,0.002306074
+Tennessee,Tennessee 7th,0.3958,0.002142512
+Tennessee,Tennessee 8th,0.2967,0.00226702
+Tennessee,Tennessee 9th,0.727,0.001591178
+Texas,Texas 1st,0.2483,0.002117861
+Texas,Texas 2nd,0.3808,0.002124523
+Texas,Texas 3rd,0.4046,0.002475259
+Texas,Texas 4th,0.343,0.002314904
+Texas,Texas 5th,0.3689,0.001978969
+Texas,Texas 6th,0.3615,0.001890281
+Texas,Texas 7th,0.6178,0.001652113
+Texas,Texas 8th,0.3369,0.002191833
+Texas,Texas 9th,0.7353,0.001559264
+Texas,Texas 10th,0.3817,0.002271181
+Texas,Texas 11th,0.2768,0.001722656
+Texas,Texas 12th,0.3912,0.002193466
+Texas,Texas 13th,0.2612,0.001951124
+Texas,Texas 14th,0.3348,0.002023111
+Texas,Texas 15th,0.4288,0.001483992
+Texas,Texas 16th,0.6057,0.001507186
+Texas,Texas 17th,0.3605,0.001948407
+Texas,Texas 18th,0.7129,0.001467571
+Texas,Texas 19th,0.2457,0.001819659
+Texas,Texas 20th,0.6227,0.001612334
+Texas,Texas 21st,0.3854,0.002775518
+Texas,Texas 22nd,0.4049,0.002208038
+Texas,Texas 23rd,0.432,0.001955095
+Texas,Texas 24th,0.4251,0.002464737
+Texas,Texas 25th,0.3226,0.002193048
+Texas,Texas 26th,0.3873,0.002501916
+Texas,Texas 27th,0.3593,0.001852854
+Texas,Texas 28th,0.4813,0.001617521
+Texas,Texas 29th,0.6238,0.001035814
+Texas,Texas 30th,0.7502,0.001681819
+Texas,Texas 31st,0.3857,0.002376264
+Texas,Texas 32nd,0.6331,0.001566227
+Texas,Texas 33rd,0.6928,0.001129565
+Texas,Texas 34th,0.5028,0.001324636
+Texas,Texas 35th,0.6856,0.001707156
+Texas,Texas 36th,0.3205,0.001959609
+Texas,Texas 37th,0.7558,0.002306152
+Texas,Texas 38th,0.398,0.002251455
+Utah,Utah 1st,0.3966,0.002374259
+Utah,Utah 2nd,0.3995,0.002304428
+Utah,Utah 3rd,0.4003,0.00239806
+Utah,Utah 4th,0.363,0.002336466
+Vermont,Vermont At-Large,0.6686,0.002320548
+Virginia,Virginia 1st,0.4733,0.003093093
+Virginia,Virginia 2nd,0.5014,0.002643002
+Virginia,Virginia 3rd,0.6806,0.002086182
+Virginia,Virginia 4th,0.6695,0.002472274
+Virginia,Virginia 5th,0.4429,0.002839308
+Virginia,Virginia 6th,0.382,0.002552021
+Virginia,Virginia 7th,0.5195,0.002560701
+Virginia,Virginia 8th,0.7618,0.002486069
+Virginia,Virginia 9th,0.2804,0.00262532
+Virginia,Virginia 10th,0.555,0.002655033
+Virginia,Virginia 11th,0.6846,0.002660925
+Washington,Washington 1st,0.6507,0.002380738
+Washington,Washington 2nd,0.6211,0.002698261
+Washington,Washington 3rd,0.4818,0.002677699
+Washington,Washington 4th,0.3986,0.001995005
+Washington,Washington 5th,0.4454,0.002575006
+Washington,Washington 6th,0.5967,0.002761449
+Washington,Washington 7th,0.8871,0.002789842
+Washington,Washington 8th,0.5309,0.002711213
+Washington,Washington 9th,0.7178,0.00207805
+Washington,Washington 10th,0.5925,0.002291566
+West Virginia,West Virginia 1st,0.2785,0.002384357
+West Virginia,West Virginia 2nd,0.3014,0.002555228
+Wisconsin,Wisconsin 1st,0.4802,0.002579866
+Wisconsin,Wisconsin 2nd,0.7057,0.002974162
+Wisconsin,Wisconsin 3rd,0.4658,0.002665569
+Wisconsin,Wisconsin 4th,0.7639,0.002211683
+Wisconsin,Wisconsin 5th,0.3867,0.003069631
+Wisconsin,Wisconsin 6th,0.4174,0.002731468
+Wisconsin,Wisconsin 7th,0.3889,0.002807628
+Wisconsin,Wisconsin 8th,0.4185,0.002741181
+Wyoming,Wyoming At-Large,0.2676,0.001720357
