@@ -7,7 +7,7 @@ classdef Config
         %% Race Specific Strings
         
         currentDate (1,1) datetime = datetime("today"); % Current Date
-        electionDate (1,1) datetime = datetime(2025,11,4);
+        electionDate (1,1) datetime = datetime(2025,4,1);
         startDate (1,1) datetime =  datetime(2025,1,20); % Campaign Start Date
 
         %% Funadmental Constants

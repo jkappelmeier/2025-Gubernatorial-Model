@@ -154,7 +154,7 @@ classdef Model
 
             C = Common.Config();
 
-            P = obj.pBiasPolling * 1000;
+            P = obj.pFund * 100000;
             x = obj.xFundEst;
             tRemain = 0;
             for i = 1:length(obj.time)
