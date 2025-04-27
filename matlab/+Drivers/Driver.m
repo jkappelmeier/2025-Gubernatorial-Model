@@ -11,5 +11,6 @@ model = Core.Model("2025 Model", fundamentals, corr, cdData);
 model = model.runPollingAverage(polls);
 [xEst, pEst] = model.runEstimate();
 
-sims = mvnrnd(xEst, pEst, 100000)';
-Visualization.printResults.printStandardResults(fundamentals, xEst, pEst);
+results = Common.Simulate(model, 10000);
+Visualization.printResults.printStandardResults(model, results);
+% Visualization.printResults.printAllDistricts(model);

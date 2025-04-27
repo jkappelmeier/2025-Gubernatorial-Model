@@ -5,15 +5,15 @@ classdef Config
 
     properties (Constant)
         %% Race Specific Strings
-        
-        currentDate (1,1) datetime = datetime("today"); % Current Date
-        electionDate (1,1) datetime = datetime(2025,4,1);
-        startDate (1,1) datetime =  datetime(2025,1,20); % Campaign Start Date
+        currentDate (1,1) datetime = datetime(2022,11,8); % Current Date
+        electionDate (1,1) datetime = datetime(2022,11,8);
+        startDate (1,1) datetime =  datetime(2022,1,20); % Campaign Start Date
 
         %% Funadmental Constants
         types (1,4) string = ["President", "Senate", "House", "Governor"];
         biasSigma (1,4) double = [0.04057, 0.0231, 0.0234, 0.0259];
-        stateSigma (1,4) double = [0.0354, 0.0608, 0.0448, 0.085734];
+        districtSigma (1,4) double = [0.0390, 0.0390, 0.0390, 0.0390];
+        electionSigma (1,4) double = [0, sqrt(0.0608^2-0.0299^2), sqrt(0.0448^2-0.0390^2), sqrt(0.085734^2-0.0299^2)];
         incSigma (1,4) double = [0, 0.0322, 0.0305, 0];
 
         biasCorr (4,4) double = [1, 0.4166, 0.5644, 0.2171;
@@ -28,19 +28,27 @@ classdef Config
         
         %% Polling Constants
         
-        pollingSigmaSF (1,1) double {mustBePositive} = 0.0566; % Average polling error at N = 1000
+        pollingSigmaSF (1,1) double {mustBePositive} = 0.0158; % Average polling error at N = 1000 .0566
         
 
-        pollingBiasSigma (1,4) = [0.0248, 0.0231, 0.0241, 0.0247];
-        pollingStateSigma (1,4) = [0.0304, 0.0418, 0.0467, 0.0415];
-        pollingBiasProcessNoise (1,4) = [7.75e-6, 6.73e-6, 7.33e-6, 7.68e-6];
-        pollingStateProcessNoise (1,4) = [1.17e-5, 2.2e-5, 2.75e-5, 2.17e-5];
+        pollingBiasSigma (1,4) = [0.0155, 0.0181, 0.0160, 0.0161];
+        pollingDistrictSigma (1,4) = [0.0188, 0.0188, 0.0188, 0.0188]
+        pollingElectionSigma (1,4) = [0, sqrt(0.0199^2-0.0148^2), sqrt(0.0325^2-0.0188^2), sqrt(0.022^2-0.0148^2)];
+        pollingBiasProcessNoise (1,4) = [7.75e-6, 1.05e-5, 8.26e-6, 8.36e-6];
+        pollingDistrictProcessNoise (1,4) = [1.17e-5, 1.17e-5, 1.17e-5, 1.17e-5];
+        pollingElectionProcessNoise (1,4) = [0, 5.86e-6, 2.33e-5, 8.80e-6];
         
         % polling correlation:
-        pollBiasCorr (4,4) double = [1, 0.9909, 0.8875, 0.9104;
-            0.9909, 1, 0.8459, 0.8979;
-            0.8875, 0.8459, 1, 0.7934;
-            0.9104, 0.8979, 0.7934, 1];
+        pollBiasCorr (4,4) double = [1, 0.9167, 0.8691, 0.9281;
+            0.9167, 1, 0.5729, 0.8721;
+            0.8691, 0.5729, 1, 0.703;
+            0.9281, 0.8721, 0.703, 1];
+
+        %% Congressional Makeup
+
+        senateDInit (1,1) double = 36;
+        senateRInit (1,1) double = 29;
+        curVP (1,1) string = "Democrat";
         
     end
 end

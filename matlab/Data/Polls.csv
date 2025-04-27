@@ -1,4 +1,13 @@
 Type,Election,Geography,Date,Democrat,Republican,Pollster,SampleSize
-Generic Ballot,Generic Ballot,Generic Ballot,3/20/2025,51%,48%,Test,1000
-Governor,New Jersey,New Jersey,3/15/2025,55%,45%,Test,1000
-Governor,Virginia,Virginia,2/28/2025,48%,48%,Test,1000
+Generic Ballot,Generic Ballot,Generic Ballot,2/1/2025,43%,43%,Fabrizo/Anzalone,3000
+Generic Ballot,Generic Ballot,Generic Ballot,2/5/2025,46%,47%,Cygnal,1500
+Generic Ballot,Generic Ballot,Generic Ballot,3/3/2025,44%,41%,Emerson,1000
+Generic Ballot,Generic Ballot,Generic Ballot,3/11/2025,48%,47%,NBC News,1000
+Generic Ballot,Generic Ballot,Generic Ballot,4/1/2025,44%,43%,Wall Street Journal,1500
+Generic Ballot,Generic Ballot,Generic Ballot,4/3/2025,48%,47%,Cygnal,1500
+Generic Ballot,Generic Ballot,Generic Ballot,4/8/2025,43%,42%,Economist/YouGov,1563
+Generic Ballot,Generic Ballot,Generic Ballot,4/13/2025,48%,46%,CNBC,800
+Generic Ballot,Generic Ballot,Generic Ballot,4/24/2025,47%,44%,NY Times/Siena,913
+Governor,Virginia,Virginia,2/28/2025,46%,40%,Cygnal,600
+Governor,Virginia,Virginia,2/20/2025,39%,24%,Roanoke College,690
+Governor,Virginia,Virginia,1/20/2025,40%,40%,co/efficient,867

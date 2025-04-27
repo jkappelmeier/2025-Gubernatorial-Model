@@ -1,9 +1,11 @@
-classdef Model
+classdef Model < handle
     properties
         name (1,1) string
         geographies table
         xFundEst (:,1) double
         pFund (:,:) double
+        xGeoEst (:,1) double
+        pGeoEst (:,:) double
         time (1,:) double
         pBiasPolling (:,:) double
         Q (:,:) double
@@ -68,6 +70,8 @@ classdef Model
                     obj.hMap = [obj.hMap, zeros(size(obj.hMap, 1), 1);
                        zeros(1,size(obj.hMap,2)), 1];
                     obj.hMapCd = [obj.hMapCd, mapIdx];
+                else
+                    error("Geography not found");
                 end
                 
             end
@@ -75,55 +79,60 @@ classdef Model
             obj.pFund = zeros(length(obj.xFundEst));
             obj.pBiasPolling = obj.pFund;
 
-            sigmaStatePres = C.stateSigma(1);
-            sigmaStatePresPoll = C.pollingStateSigma(1);
-            deltaSigmaState = (C.stateSigma.^2 - sigmaStatePres^2).^0.5;
-            deltaSigmaStatePoll = (C.pollingStateSigma.^2 - sigmaStatePresPoll.^2).^0.5;
-            deltaProcessNoisePoll = C.pollingStateProcessNoise - C.pollingStateProcessNoise(1);
+            types = cell(N,1);
+            idxs = cell(N,1);
+            vecSigmaDistricts = cell(N,1);
+            vecSigmaDistrictPolls = cell(N,1);
+            vecProcessNoiseDistricts = cell(N,1);
+            incs = cell(N,1);
 
             for i = 1:N
-                type1 = geographies.Type(i);
-                idx1 = strcmp(type1, C.types);
-                if strcmp(type1, "Generic Ballot")
-                    idx1 = strcmp("House", C.types);
+                type = geographies.Type(i);
+                types{i} = type;
+                idx = strcmp(type, C.types);
+                if strcmp(type, "Generic Ballot")
+                    idx = strcmp("House", C.types);
                 end
+                idxs{i} = idx;
 
-                n1 = sum(obj.hMap(:,i)>0);
-                vecSigmaPres1 = ones(n1,1) * sigmaStatePres;
-                vecSigmaPresPoll1 = ones(n1,1) * sigmaStatePresPoll;
+                n = sum(obj.hMap(:,i)>0);
+                vecSigmaDistricts{i} = ones(n,1) * C.districtSigma(idx);
+                vecSigmaDistrictPolls{i} = ones(n,1) * C.pollingDistrictSigma(idx);
+                vecProcessNoiseDistricts{i} = ones(n,1) * C.pollingDistrictProcessNoise(idx)^0.5;
 
                 if geographies.usePrevResults(i) == 1 && geographies.Incumbency(i) == geographies.PrevIncumbency(i)
-                    inc1 = 0.5 * geographies.Incumbency(i);
+                    incs{i} = 0.5 * geographies.Incumbency(i);
                 else
-                    inc1 = geographies.Incumbency(i);
+                    incs{i} = geographies.Incumbency(i);
                 end
+            end
 
-                for j = 1:N
-                    type2 = geographies.Type(j);
-                    n2 = sum(obj.hMap(:,j)>0);
-                    vecSigmaPres2 = ones(n2,1) * sigmaStatePres;
-                    vecSigmaPresPoll2 = ones(n2,1) * sigmaStatePresPoll;
-                    idx2 = strcmp(type2, C.types);
+            for i = 1:N
+                disp(string(i)+"/"+string(N))
+                for j = 1:i
+                    type1 = types{i};
+                    type2 = types{j};
+                    vecSigmaDistrict1 = vecSigmaDistricts{i};
+                    vecSigmaDistrict2 = vecSigmaDistricts{j};
+                    vecSigmaDistrictPoll1 = vecSigmaDistrictPolls{i};
+                    vecSigmaDistrictPoll2 = vecSigmaDistrictPolls{j};
+                    vecProcessNoiseDistrict1 = vecProcessNoiseDistricts{i};
+                    vecProcessNoiseDistrict2 = vecProcessNoiseDistricts{j};
+                    idx1 = idxs{i};
+                    idx2 = idxs{j};
+                    inc1 = incs{i};
+                    inc2 = incs{j};
 
                     if strcmp(type1, "Generic Ballot") || strcmp(type2, "Generic Ballot")
-                        rhoTemp = zeros(length(vecSigmaPres1),length(vecSigmaPres2));
-                        if strcmp(type2, "Generic Ballot")
-                            idx2 = strcmp("House", C.types);
-                        end
+                        rhoTemp = zeros(length(vecSigmaDistrict1),length(vecSigmaDistrict2));
                     else
                         rhoTemp = corrMatrix(obj.hMapCd(:,i),obj.hMapCd(:,j));
                     end
-                    
-                    if geographies.usePrevResults(j) == 1 && geographies.Incumbency(j) == geographies.PrevIncumbency(j)
-                        inc2 = 0.5 * geographies.Incumbency(j);
-                    else
-                        inc2 = geographies.Incumbency(j);
-                    end
 
                     % Covariance between districts
-                    cov = vecSigmaPres1 * vecSigmaPres2' .* rhoTemp;
-                    covPoll = vecSigmaPresPoll1 * vecSigmaPresPoll2' .* rhoTemp;
-                    qTemp = C.pollingStateProcessNoise(1) * rhoTemp;
+                    cov = vecSigmaDistrict1 * vecSigmaDistrict2' .* rhoTemp;
+                    covPoll = vecSigmaDistrictPoll1 * vecSigmaDistrictPoll2' .* rhoTemp;
+                    qTemp = vecProcessNoiseDistrict1 * vecProcessNoiseDistrict2' .* rhoTemp;
 
                     % Covariance from biases
                     cov = cov + C.biasSigma(idx1) * C.biasCorr(idx1, idx2) * C.biasSigma(idx2);
@@ -131,19 +140,29 @@ classdef Model
                     qTemp = qTemp + C.pollingBiasProcessNoise(idx1)^0.5 * C.pollBiasCorr(idx1,idx2) * C.pollingBiasProcessNoise(idx2)^0.5;
 
                     % Covariance from state/district errors
-                    if strcmp(type1, type2) && strcmp(geographies.Election(i), geographies.Election(j)) && ~strcmp(type1, "Generic Ballot")
-                        cov = cov + deltaSigmaState(idx1).^2;
-                        covPoll = covPoll + deltaSigmaStatePoll(idx1).^2;
-                        qTemp = qTemp + deltaProcessNoisePoll(idx1);
+                    if strcmp(geographies.Election(i), geographies.Election(j)) && strcmp(type1, type2) && ~strcmp(type1, "Generic Ballot")
+                        cov = cov + C.electionSigma(idx1).^2;
+                        covPoll = covPoll + C.pollingElectionSigma(idx1).^2;
+                        qTemp = qTemp + C.pollingElectionProcessNoise(idx1);
                     end
 
                     % Covariance from incumbency
                     cov = cov + double(inc1*inc2*C.incSigma(idx1)*C.incSigma(idx2)*C.incCorr(idx1,idx2));
+
+                    if (any(isnan(cov)))
+                        a = 1;
+                    end
                     obj.pFund(obj.hMap(:,i)>0,obj.hMap(:,j)>0) = cov;
                     obj.pBiasPolling(obj.hMap(:,i)>0,obj.hMap(:,j)>0) = covPoll;
                     obj.Q(obj.hMap(:,i)>0,obj.hMap(:,j)>0) = qTemp;
                 end
             end
+            pFundBottom = tril(obj.pFund);
+            pBiasPollingBottom = tril(obj.pBiasPolling);
+            qBottom = tril(obj.Q);
+            obj.pFund = pFundBottom + pFundBottom' - pFundBottom .* eye(size(pFundBottom));
+            obj.pBiasPolling = pBiasPollingBottom + pBiasPollingBottom' - pBiasPollingBottom .* eye(size(pBiasPollingBottom));
+            obj.Q = qBottom + qBottom' - qBottom .* eye(size(qBottom));
         end
 
         function obj = runPollingAverage(obj, polls)
@@ -156,30 +175,25 @@ classdef Model
 
             P = obj.pFund * 100000;
             x = obj.xFundEst;
-            tRemain = 0;
             for i = 1:length(obj.time)
-                if obj.time(i) > days(C.currentDate - C.startDate)
-                    tRemain = days(C.electionDate - C.currentDate);
-                    break
-                end
                 curIdx = polls.DaysFromT0 == obj.time(i);
                 if any(curIdx)
                     curPolls = polls(curIdx, :);
                     z = curPolls.Result;
                     H = zeros(length(z),length(obj.xFundEst));
-                    R = curPolls.Sigma' * eye(length(z)) * curPolls.Sigma;
+                    R = curPolls.Sigma' * curPolls.Sigma.* eye(length(z));
                     for j = 1:length(z)
                         measIdx = (curPolls.Type(j) == obj.geographies.Type) & (curPolls.Election(j) == obj.geographies.Election) & (curPolls.Geography(j) == obj.geographies.Geography);
                         if any(measIdx)
                             H(j,:) = obj.hMap(:,measIdx)';
                         else
                             diffGeographyIdx = (curPolls.Type(j) == obj.geographies.Type) & (curPolls.Election(j) == obj.geographies.Election) & (curPolls.Geography(j) ~= obj.geographies.Geography);
-                            geos = obj.geographies.Geography(diffGeographyIdx);
-                            if strcmp(geos(1), "National")
+%                             geos = obj.geographies.Geography(diffGeographyIdx);
+                            if strcmp(curPolls.Geography(j), "National")
                                 newH = obj.hMap;
                                 newH(:,~diffGeographyIdx) = 0;
                                 newH = sum(newH,2);
-                                newH = norm(newH);
+                                newH = newH / sum(newH);
                                 H(j,:) = newH';
                             else
                                 cdIdx = string(obj.cdData.State) == curPolls.Geography(j);
@@ -190,7 +204,7 @@ classdef Model
                                 newH = obj.hMap;
                                 newH(:,~idx) = 0;
                                 newH = sum(newH,2);
-                                H(j,:) = newH';
+                                H(j,:) = newH'/sum(newH);
 
                             end
                         end
@@ -206,6 +220,7 @@ classdef Model
                 P = P + obj.Q;
             end
 
+            tRemain = days(C.electionDate - C.currentDate);
             P = P + obj.Q * tRemain + obj.pBiasPolling;
 
             obj.xPolling = x;
@@ -231,12 +246,23 @@ classdef Model
 
             xFinal = x + K * y;
             PFinal = (eye(N)-K)*P*(eye(N)-K)' + K*R*K';
+            PFinal = (PFinal + PFinal')/2;
+
+            idxNoDCand = obj.geographies.DemCandidate == "No Candidate";
+            idxNoRCand = obj.geographies.RepCandidate == "No Candidate";
+            idxNoDCand = (obj.hMap * idxNoDCand) > 0;
+            idxNoRCand = (obj.hMap * idxNoRCand) > 0;
+            xFinal(idxNoDCand) = 0;
+            xFinal(idxNoRCand) = 1;
 
             obj.xFinalEst = xFinal;
             obj.pFinal = PFinal;
 
             xGeoEst = obj.hMap' * xFinal;
             pGeoEst = obj.hMap' * PFinal * obj.hMap;
+
+            obj.xGeoEst = xGeoEst;
+            obj.pGeoEst = pGeoEst;
         end
     end
 end

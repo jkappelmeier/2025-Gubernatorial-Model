@@ -25,7 +25,9 @@ classdef Reader
 
             C = Common.Config;
 
-            data = readtable(file);
+            opts = detectImportOptions(file);
+            opts = setvaropts(opts,'Date','InputFormat','MM/dd/uuuu');
+            data = readtable(file, opts);
             N = length(data.Type);
 
             polls = table();
