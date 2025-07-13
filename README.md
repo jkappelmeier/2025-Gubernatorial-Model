@@ -1,4 +1,4 @@
-# 2025-Gubernatorial-Model
+# 2025-Gubernatorial-Model (Updated as of 7/12/2025)
 
 Governor - New Jersey:
     Mikie Sherrill (D) - Estimate: 55.99% | Chance of Winning: 85.25%
