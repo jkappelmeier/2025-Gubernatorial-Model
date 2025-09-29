@@ -2,10 +2,10 @@
 
 ### New Jersey
 
-* **Mikie Sherrill (D):** 54.95% — *Chance of Winning:* 83.86%
-* **Jack Ciattarelli (R):** 45.05% — *Chance of Winning:* 16.14%
+* **Mikie Sherrill (D):** 52.71% — *Chance of Winning:* 73.72%
+* **Jack Ciattarelli (R):** 47.29% — *Chance of Winning:* 26.28%
 
 ### Virginia
 
-* **Abigail Spanberger (D):** 54.11% — *Chance of Winning:* 81.55%
-* **Winsome Earle-Sears (R):** 45.89% — *Chance of Winning:* 18.45%
+* **Abigail Spanberger (D):** 54.50% — *Chance of Winning:* 85.93%
+* **Winsome Earle-Sears (R):** 45.50% — *Chance of Winning:* 14.07%
