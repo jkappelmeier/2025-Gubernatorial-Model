@@ -13,4 +13,3 @@ model = model.runPollingAverage(polls);
 
 results = Common.Simulate(model, 10000);
 Visualization.printResults.printStandardResults(model, results);
-Visualization.printResults.printAllDistricts(model);
