@@ -13,3 +13,5 @@ model = model.runPollingAverage(polls);
 
 results = Common.Simulate(model, 10000);
 Visualization.printResults.printStandardResults(model, results);
+tblNJ = Visualization.printResults.saveTimeEstimate(model, "New Jersey");
+tblVA = Visualization.printResults.saveTimeEstimate(model, "Virginia");

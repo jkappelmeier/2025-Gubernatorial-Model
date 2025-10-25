@@ -7,9 +7,9 @@ end
 idx = model.geographies.Type == "Generic Ballot";
 geographies = model.geographies;
 geographies(idx,:) = [];
-xEstSim = model.xGeoEst;
+xEstSim = model.xGeoEst(:,end);
 xEstSim(idx) = [];
-pEstSim = model.pGeoEst;
+pEstSim = model.pGeoEst(:,:,end);
 pEstSim(idx,:) = [];
 pEstSim(:,idx) = [];
 sims = mvnrnd(xEstSim, pEstSim, nSims)';

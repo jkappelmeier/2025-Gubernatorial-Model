@@ -4,17 +4,17 @@ classdef Model < handle
         geographies table
         xFundEst (:,1) double
         pFund (:,:) double
-        xGeoEst (:,1) double
-        pGeoEst (:,:) double
+        xGeoEst (:,:) double
+        pGeoEst (:,:,:) double
         time (1,:) double
         pBiasPolling (:,:) double
         Q (:,:) double
-        xFinalEst (:,1) double
-        pFinal (:,:) double
+        xFinalEst (:,:) double
+        pFinal (:,:,:) double
         hMap (:,:) double = []
         hMapCd (:,:) logical = []
-        xPolling (:,1) double
-        pPolling (:,:) double
+        xPolling (:,:) double
+        pPolling (:,:,:) double
         cdData table
     end
 
@@ -173,8 +173,13 @@ classdef Model < handle
 
             C = Common.Config();
 
+            N = length(obj.time);
+            n = length(obj.xFundEst);
+            obj.xPolling = zeros(n,N);
+            obj.pPolling = zeros(n,n,N);
             P = obj.pFund * 100000;
             x = obj.xFundEst;
+            tRemain = days(C.electionDate - C.currentDate);
             for i = 1:length(obj.time)
                 curIdx = polls.DaysFromT0 == obj.time(i);
                 if any(curIdx)
@@ -214,17 +219,13 @@ classdef Model < handle
                     S = H * P * H' + R;
                     K = P * H' / S;
                     x = x + K * y;
-                    N = length(x);
-                    P = (eye(N)-K*H)*P*(eye(N)-K*H)'+K*R*K';
+                    P = (eye(n)-K*H)*P*(eye(n)-K*H)'+K*R*K';
                 end
                 P = P + obj.Q;
+                tRemainCur = tRemain + N-i;
+                obj.xPolling(:,i) = x;
+                obj.pPolling(:,:,i) = P + tRemainCur * obj.Q + obj.pBiasPolling;
             end
-
-            tRemain = days(C.electionDate - C.currentDate);
-            P = P + obj.Q * tRemain + obj.pBiasPolling;
-
-            obj.xPolling = x;
-            obj.pPolling = P;
             
         end
 
@@ -233,36 +234,42 @@ classdef Model < handle
                 obj Core.Model
             end
 
-            N = length(obj.xFundEst);
+            n = length(obj.xFundEst);
+            N = length(obj.time);
 
             x = obj.xFundEst;
             P = obj.pFund;
-            z = obj.xPolling;
-            R = obj.pPolling;
 
-            y = z - x;
-            S = P + R;
-            K = P / S;
+            for i = 1:N
+                z = obj.xPolling(:,i);
+                R = obj.pPolling(:,:,i);
+    
+                y = z - x;
+                S = P + R;
+                K = P / S;
+    
+                xFinal = x + K * y;
+                PFinal = (eye(n)-K)*P*(eye(n)-K)' + K*R*K';
+                PFinal = (PFinal + PFinal')/2;
+    
+                idxNoDCand = obj.geographies.DemCandidate == "No Candidate";
+                idxNoRCand = obj.geographies.RepCandidate == "No Candidate";
+                idxNoDCand = (obj.hMap * idxNoDCand) > 0;
+                idxNoRCand = (obj.hMap * idxNoRCand) > 0;
+                xFinal(idxNoDCand) = 0;
+                xFinal(idxNoRCand) = 1;
 
-            xFinal = x + K * y;
-            PFinal = (eye(N)-K)*P*(eye(N)-K)' + K*R*K';
-            PFinal = (PFinal + PFinal')/2;
+                obj.xFinalEst(:,i) = xFinal;
+                obj.pFinal(:,:,i) = PFinal;
 
-            idxNoDCand = obj.geographies.DemCandidate == "No Candidate";
-            idxNoRCand = obj.geographies.RepCandidate == "No Candidate";
-            idxNoDCand = (obj.hMap * idxNoDCand) > 0;
-            idxNoRCand = (obj.hMap * idxNoRCand) > 0;
-            xFinal(idxNoDCand) = 0;
-            xFinal(idxNoRCand) = 1;
+                xGeoEst = obj.hMap' * xFinal;
+                pGeoEst = obj.hMap' * PFinal * obj.hMap;
+    
+                obj.xGeoEst(:,i) = xGeoEst;
+                obj.pGeoEst(:,:,i) = pGeoEst;
+            end
 
-            obj.xFinalEst = xFinal;
-            obj.pFinal = PFinal;
-
-            xGeoEst = obj.hMap' * xFinal;
-            pGeoEst = obj.hMap' * PFinal * obj.hMap;
-
-            obj.xGeoEst = xGeoEst;
-            obj.pGeoEst = pGeoEst;
+            
         end
     end
 end

@@ -1,11 +1,11 @@
-# 2025 Gubernatorial Model (Updated 10/12/2025)
+# 2025 Gubernatorial Model (Updated 10/24/2025)
 
 ### New Jersey
 
-* **Mikie Sherrill (D):** 52.79% — *Chance of Winning:* 75.27%
-* **Jack Ciattarelli (R):** 47.21% — *Chance of Winning:* 24.73%
+* **Mikie Sherrill (D):** 53.23% — *Chance of Winning:* 82.94%
+* **Jack Ciattarelli (R):** 46.77% — *Chance of Winning:* 17.06%
 
 ### Virginia
 
-* **Abigail Spanberger (D):** 54.10% — *Chance of Winning:* 86.39%
-* **Winsome Earle-Sears (R):** 45.90% — *Chance of Winning:* 13.61%
+* **Abigail Spanberger (D):** 54.76% — *Chance of Winning:* 93.04%
+* **Winsome Earle-Sears (R):** 45.24% — *Chance of Winning:* 6.96%

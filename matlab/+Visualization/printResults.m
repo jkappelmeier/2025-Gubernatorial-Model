@@ -11,8 +11,8 @@ classdef printResults
             idxPres = geographies.Type == "President";
             if sum(idxPres) > 0
                 geoPres = geographies(idxPres, :);
-                xPres = model.xGeoEst(idxPres, :);
-                pPres = model.pGeoEst(idxPres, idxPres);
+                xPres = model.xGeoEst(idxPres, end);
+                pPres = model.pGeoEst(idxPres, idxPres, end);
     
                 if geoPres.Incumbency(1) == 1
                     inc = [1;0];
@@ -85,8 +85,8 @@ classdef printResults
                     [results.senate.demPercent; results.senate.repPercent], ...
                     "Senate", "Senate Seats", zeros(2,1), ["Democrats"; "Republicans"], ...
                     "dispType", "Senate Seats");
-                xSen = model.xGeoEst(idxSen, :);
-                pSen = model.pGeoEst(idxSen, idxSen);
+                xSen = model.xGeoEst(idxSen, end);
+                pSen = model.pGeoEst(idxSen, idxSen, end);
     
                 for i = 1:length(xSen)
                     if geoSen.Incumbency(i) == 1
@@ -108,8 +108,8 @@ classdef printResults
             idxHouse = geographies.Type == "House";
             if sum(idxHouse) > 0
                 geoHouse = geographies(idxHouse, :);
-                xHouse = model.xGeoEst(idxHouse, :);
-                pHouse = model.pGeoEst(idxHouse, idxHouse);
+                xHouse = model.xGeoEst(idxHouse, end);
+                pHouse = model.pGeoEst(idxHouse, idxHouse, end);
                 disp(" ")
                 Visualization.printResults.printResult([results.house.demAverage; results.house.repAverage], ...
                     [results.house.demPercent; results.house.repPercent], ...
@@ -148,8 +148,8 @@ classdef printResults
             if sum(idxGov) > 0
                 disp(" ")
                 geoGov = geographies(idxGov, :);
-                xGov = model.xGeoEst(idxGov, :);
-                pGov = model.pGeoEst(idxGov, idxGov);
+                xGov = model.xGeoEst(idxGov, end);
+                pGov = model.pGeoEst(idxGov, idxGov, end);
                 for i = 1:length(xGov)
                     if geoGov.Incumbency(i) == 1
                         inc = [1;0];
@@ -172,8 +172,8 @@ classdef printResults
                 model Core.Model
             end
 
-            xEst = model.xFinalEst;
-            sigmaEst = diag(model.pFinal).^0.5;
+            xEst = model.xFinalEst(:,end);
+            sigmaEst = diag(model.pFinal(:,:,end)).^0.5;
             for i = 1:size(model.hMap,2)
                 geographies = model.geographies;
                 if ~strcmp(geographies.Type(i), "Generic Ballot")
@@ -248,6 +248,36 @@ classdef printResults
                 dispString = "    " + candName(curIdx) + add + " (" + args.party(curIdx) + ") - Estimate: " + xDisp + " | Chance of Winning: " + string(round(chance(curIdx)*100,2)) + "%";
                 disp(dispString)
             end
+        end
+
+        function tbl = saveTimeEstimate(model, election)
+            C = Common.Config();
+            startDate = C.startDate;
+
+            names = model.geographies.Election;
+            idx = names == election;
+
+            timeVec = startDate + (model.time)';
+            timeVec = string(timeVec);
+            xEst = model.xGeoEst(idx,:)';
+            sigma = sqrt(model.pGeoEst(idx,idx,:));
+            sigma = sigma(:);
+            dVec = string(round(xEst*100,2)) + "%";
+            dLow = string(round((xEst-sigma*2)*100,2)) + "%";
+            dHigh = string(round((xEst+sigma*2)*100,2)) + "%";
+            dChance = string(round(normcdf(xEst,0.5,sigma)*100,2)) + "%";
+
+            rVec = string(round(100-xEst*100,2)) + "%";
+            rLow = string(round((1-xEst-sigma*2)*100,2)) + "%";
+            rHigh = string(round((1-xEst+sigma*2)*100,2)) + "%";
+            rChance = string(round(normcdf((1-xEst),0.5,sigma)*100,2)) + "%";
+
+            data = [timeVec, dVec, dLow, dHigh, dChance, rVec, rLow, rHigh, rChance];
+            dCand = model.geographies.DemCandidate(idx);
+            rCand = model.geographies.RepCandidate(idx);
+            genName = ["", " Low", " High", " "];
+
+            tbl = array2table(data, "VariableNames", ["Date", dCand + genName, rCand + genName]);
         end
     end
 end
